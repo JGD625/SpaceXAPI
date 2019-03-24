@@ -25,9 +25,9 @@ function displayRockets(responseJson) {
   $( "#no-result-message" ).empty();
   $("#dropHTML").empty();
   document.getElementById("dropHTML").innerHTML =
-      `<h3><a href=''>ROCKETS</a></h3>
+      `<h3><a href='https://en.wikipedia.org/wiki/Falcon_9'>FALCON 9</a></h3>
       <p>rockets</p>
-      <p>rockets</p>
+      <H3><a href='https://en.wikipedia.org/wiki/Falcon_Heavy'>FALCON HEAVY</a></3>
       <p>rockets</p>`
 }
 
@@ -38,9 +38,7 @@ function displayCapsules(responseJson) {
   $('#results-list').empty();
   $( "#no-result-message" ).empty();
   $("#dropHTML").empty();
-  document.getElementById("dropHTML").innerHTML = `<h3><a href=''>CapsuleS</a></h3>
-      <p>rockets</p>
-      <p>rockets</p>
+  document.getElementById("dropHTML").innerHTML = `<h3><a href='https://en.wikipedia.org/wiki/SpaceX_Dragon'>DRAGON</a></h3>
       <p>rockets</p>`;
 }
 
@@ -70,10 +68,10 @@ function displayDroneShips(responseJson) {
   $('#results-list').empty();
   $( "#no-result-message" ).empty();
   $("#dropHTML").empty();
-  document.getElementById("dropHTML").innerHTML = `<h3><a href=''>ROCKETS</a></h3>
-      <p>rockets</p>
-      <p>rockets</p>
-      <p>rockets</p>`;
+  document.getElementById("dropHTML").innerHTML = `<h3><a href='https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship'>ASDS:Autonomous Spaceport Drone Ships</a></h3>
+      <p>Of Course I Still Love You</p>
+      <p>Just Read the Instructions</p>
+      <p>A Shortfall of Gravitas </p>`;
 }
 /*
 
