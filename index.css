@@ -80,6 +80,7 @@ form {
 .dropdown {
   position: relative;
   display: inline-block;
+
 }
 
 .dropdown-content {
@@ -102,3 +103,4 @@ form {
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
