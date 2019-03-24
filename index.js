@@ -19,12 +19,90 @@ window.onclick = function(event) {
   }
 }
 
+function displayRockets(responseJson) {
+  console.log(responseJson);
+  $('#results-list').empty();
+  $( "#no-result-message" ).empty();
+  $("#dropHTML").empty();
+  document.getElementById("dropHTML").innerHTML =
+      `<h3><a href=''>ROCKETS</a></h3>
+      <p>rockets</p>
+      <p>rockets</p>
+      <p>rockets</p>`
+}
+
+
+
+function displayCapsules(responseJson) {
+  console.log(responseJson);
+  $('#results-list').empty();
+  $( "#no-result-message" ).empty();
+  $("#dropHTML").empty();
+  document.getElementById("dropHTML").innerHTML = `<h3><a href=''>CapsuleS</a></h3>
+      <p>rockets</p>
+      <p>rockets</p>
+      <p>rockets</p>`;
+}
+
+/*
+
+function getCapsules() {
+  const capsulesUrl = 'https://api.spacexdata.com/v3/capsules/' ;
+  console.log(capsulesUrl);
+
+  fetch(capsulesUrl)
+    .then(response => {
+       if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
+    .then(responseJson => {
+      console.log(responseJson);
+      displayCapsules(responseJson);
+      
+    });
+}
+
+*/
+function displayDroneShips(responseJson) {
+  console.log(responseJson);
+  $('#results-list').empty();
+  $( "#no-result-message" ).empty();
+  $("#dropHTML").empty();
+  document.getElementById("dropHTML").innerHTML = `<h3><a href=''>ROCKETS</a></h3>
+      <p>rockets</p>
+      <p>rockets</p>
+      <p>rockets</p>`;
+}
+/*
+
+function getDrones() {
+  const dronesUrl = 'https://api.spacexdata.com/v3/ships/' ;
+  console.log(dronesUrl);
+
+  fetch(dronesUrl)
+    .then(response => {
+       if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
+    .then(responseJson => {
+      console.log(responseJson);
+      displayDroneShips(responseJson);
+      
+    });
+}
+
+*/
+
 
 
 function displayResults(responseJson) {
   console.log(responseJson);
   $('#results-list').empty();
-  
+  $("#dropHTML").empty();
   for (let i = 0; i < responseJson.length; i++){
     if (responseJson[i].launch_year === $('#js-search-term').val()){
     $('#results-list').append(
@@ -36,7 +114,6 @@ function displayResults(responseJson) {
       </li>`
     )};
   };
-  
   $('#results').removeClass('hidden');
   $( "#submit-button" ).click(function() {
   $( "#no-result-message" ).empty();
@@ -64,6 +141,9 @@ function getLaunches(query) {
       throw new Error(response.statusText);
     })
     .then(responseJson => {
+      if(responseJson.launch_year !== $('#js-search-term').val()) {
+     $('#no-result-message').text(`Sorry! Looks like there weren't any launches found that year`);
+      } 
       console.log(responseJson);
       displayResults(responseJson);
       
@@ -77,7 +157,7 @@ function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     const searchTerm = $('#js-search-term').val();
-      getLaunches(searchTerm);
+    getLaunches(searchTerm);
   });
 }
 
