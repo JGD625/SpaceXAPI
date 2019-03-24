@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SpaceX Launches and Vehichles</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Space X</h1>
+
+        <form id="js-form">
+            <label for="search-term">What year would you like to search?</label>
+            <input type="number" name="search-term" id="js-search-term">
+            <input type="submit" id="submit-button" value="Go!">
+        </form>
+        <div class="dropdown">
+  <button onclick="dropDownMenu()" class="dropbtn">Dropdown</button>
+  <div id="js-dropdown" class="dropdown-content">
+    <a href="#rockets">Rockets</a>
+    <a href="#capsules">Capsules</a>
+    <a href="#drones">Drone Ships</a>
+    <a href="#facilities">Facilities</a>
+  </div>
+</div>
+<a href="https://www.spacex.com/"><input id="spacex-link" type="button" value="Visit SpaceX"></a>
+
+        <p id="js-error-message" class="error-message"></p>
+        <section id="results" class="hidden">
+          <h2>Search results</h2>
+          <ul id="results-list">
+          </ul>
+          <div id="no-result-message"></div>
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
