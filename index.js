@@ -25,10 +25,15 @@ function displayRockets(responseJson) {
   $( "#no-result-message" ).empty();
   $("#dropHTML").empty();
   document.getElementById("dropHTML").innerHTML =
-      `<h3><a href='https://en.wikipedia.org/wiki/Falcon_9'>FALCON 9</a></h3>
-      <p>rockets</p>
-      <H3><a href='https://en.wikipedia.org/wiki/Falcon_Heavy'>FALCON HEAVY</a></3>
-      <p>rockets</p>`
+      `<div class="rocket-container"><h3><a href='https://en.wikipedia.org/wiki/Falcon_9'>FALCON 9</a></h3>
+      <div class="left"><img src="images/falcon9-render1.png" alt="falcon 9" class="resize-image"></div>
+      <div class="procket"><p>  Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit. </p><p>  Falcon 9 is the first orbital class rocket capable of reflight. Falcon 9, along with the Dragon spacecraft, was designed from the outset to deliver humans into space and under an agreement with NASA, SpaceX is actively working toward this goal.</p></div>
+      </div>
+      <div class="rocket-container">
+      <H3><a href='https://en.wikipedia.org/wiki/Falcon_Heavy'>FALCON HEAVY</a></H3>
+      <div class="left"><img src="images/falcon-heavy1.png" alt="falcon-heavy" class="resize-image"></div>
+      <div class="procket"><p>  Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons. </p><p>  Its first stage is composed of three Falcon 9 nine-engine cores whose 27 Merlin engines together generate more than 5 million pounds of thrust at liftoff, equal to approximately eighteen 747 aircraft. Only the Saturn V moon rocket, last flown in 1973, delivered more payload to orbit. </p></div>
+      </div>`
 }
 
 
