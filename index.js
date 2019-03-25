@@ -44,7 +44,8 @@ function displayCapsules(responseJson) {
   $( "#no-result-message" ).empty();
   $("#dropHTML").empty();
   document.getElementById("dropHTML").innerHTML = `<h3><a href='https://en.wikipedia.org/wiki/SpaceX_Dragon'>DRAGON</a></h3>
-      <p>rockets</p>`;
+  <img src="images/capsule1.png" alt="dragon capsule">    
+  <p>The Dragon spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. The pressurized section of the capsule is designed to carry both people and environmentally sensitive cargo. Towards the base of the capsule and contained within the nose cone are the Draco thrusters, which allow for orbital maneuvering.</p><p>The Dragon spacecraft successfully docked with the space station ahead of schedule at 6:02 a.m. ET on March 3, 2019, becoming the first American spacecraft in history to autonomously dock with the International Space Station.</p>`;
 }
 
 /*
@@ -74,9 +75,11 @@ function displayDroneShips(responseJson) {
   $( "#no-result-message" ).empty();
   $("#dropHTML").empty();
   document.getElementById("dropHTML").innerHTML = `<h3><a href='https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship'>ASDS:Autonomous Spaceport Drone Ships</a></h3>
-      <p>Of Course I Still Love You</p>
-      <p>Just Read the Instructions</p>
-      <p>A Shortfall of Gravitas </p>`;
+     <img src="images/ofcourse.png" alt="of course i still love you badge" class="resize-image">
+  <p>ASDS, or Autonomous Spaceport Drone Ships, are unique vessels that SpaceX uses to collect reusable rockets.
+     <p>Of Course I Still Love You operates in the Atlantic for launches form Cape Canaveral.</p>
+      <p>Just Read the Instructions operates in the Pacific for launches from Vandenberg in California.</p>
+      <p>A third ship, A Shortfall of Gravitas, is currently under construction. </p>`;
 }
 /*
 
