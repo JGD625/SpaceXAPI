@@ -11,14 +11,13 @@
 </head>
 <body>
   <header>
-    <img src="images/5842a770a6515b1e0ad75afe.png" alt="spacex logo" class="spacexlogo">
-    
+    <img src="images/Xlogo.png" alt="spacex logo" class="spacexlogo">
   </header>
   <div class="container">
     <h1>Search SpaceX Launches</h1>
       <form id="js-form">
         <label for="search-term">SpaceX has held launches since 2006.  What year would you like to search?</label>
-        <input type="number" name="search-term" id="js-search-term">
+        <input type="number" name="search-term" id="js-search-term" required>
         <input type="submit" id="submit-button" value="Go!">
        </form>
     <div class="dropdown">
@@ -35,11 +34,11 @@
 
   <p id="js-error-message" class="error-message"></p>
     <section id="results" class="hidden">
-    <h2>Search results</h2>
+    
     <ul id="results-list">
     </ul>
     </section>
-    <div id="no-result-message" class="hidden"></div>
+    <p id="no-result-message"></p>
   <p id="dropHTML"></p>
   <script src="index.js"></script>
 </body>

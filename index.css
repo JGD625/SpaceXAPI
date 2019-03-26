@@ -21,26 +21,55 @@ header {
   margin: 0px;
 }
 
-button, input[type="text"] {
-  padding: 5px;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
 .container {
   max-width: 600px;
   margin: 0 auto;
 }
 
-.error-message {
-    color: red;
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-.hidden {
-  display: none;
+#results {
+  padding: 15px;
+  background-color:rgba(0, 0, 0.6);
+  font-weight: bold;
 }
+
+/*CARD STYLING*/
+
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 10px;
+  display: table;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(49, 36, 36, 0.2); 
+  padding: 16px;
+  text-align: center;
+  background-color: #000000;
+  margin: 0 -5px;
+  border: 5px solid #000;
+}
+
+.containerTab {
+  padding: 25px;
+  background: rgb(37, 37, 37);
+  color: white;
+  position: relative;
+  z-index: 2;
+  border: 3px solid gray;
+  border-radius: 2px;
+  text-align: left;
+}
+
+
+/*TEXT STYLING*/
 
 h1, h2, h3 {
   color: #fff;
@@ -59,9 +88,24 @@ label {
   font-family: 'Montserrat', sans-serif;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+.error-message {
+  color: red;
+}
+
+.procket {
+  padding: 50px 50px 50px 50px;
+  margin-bottom: 100px;
+  margin-left: auto;
+}
+
+/*BUTTON STYLING*/
+
+button, input[type="text"] {
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 #submit-button {
@@ -77,11 +121,27 @@ form {
   border-radius: 4px;
 }
 
-#results {
-  padding: 15px;
-  background-color:rgba(0, 0, 0.6);
-  font-weight: bold;
+#spacex-link-button{
+  background-color: rgb(43, 128, 185);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  float: right;
 }
+
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+
+/*DROPDOWN STYLING*/
+
 .dropbtn {
   background-color: rgb(43, 128, 185);
   color: white;
@@ -121,28 +181,17 @@ form {
 
 .dropdown a:hover {background-color: #ddd;}
 
-.show {display: block;}
+/*LISTS AND GRIDS*/
 
-.spacexlogo {
-  display: block;
-  width: 400px;
+ul, li {
+  list-style-type: none;
 }
 
-#spacex-link-button{
-  background-color: rgb(43, 128, 185);
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  float: right;
 
-}
+/*STYLE CLASSES*/
 
-.resize-image {
-  height: 350px;
-  padding: 20px;
+.hidden {
+  display: none;
 }
 
 .left {
@@ -155,10 +204,28 @@ form {
   clear: both;
 }
 
-.procket {
-  padding: 50px 50px 50px 50px;
-  margin-bottom: 100px;
-  margin-left: auto;
+.resize-image {
+  height: 350px;
+  padding: 20px;
 }
 
+.show {display: block;}
 
+.spacexlogo {
+  display: block;
+  width: 400px;
+}
+
+.patch-resize {
+  max-width: 150px;
+}
+
+/*MEDIA SCREENS*/
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}

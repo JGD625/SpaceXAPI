@@ -19,6 +19,8 @@ window.onclick = function(event) {
   }
 }
 
+
+
 function displayRockets(responseJson) {
   console.log(responseJson);
   $('#results-list').empty();
@@ -112,18 +114,39 @@ function displayResults(responseJson) {
   for (let i = 0; i < responseJson.length; i++){
     if (responseJson[i].launch_year === $('#js-search-term').val()){
     $('#results-list').append(
-      `<li><h3><a href='${responseJson[i].links.article_link}'>${responseJson[i].mission_name}</a></h3>
-      <p>Rocket: ${responseJson[i].rocket.rocket_name}</p>
-      <p>${responseJson[i].launch_year}</p>
-      <p>${responseJson[i].details}</p>
-      <img src='${responseJson[i].links.mission_patch_small}'>
-      </li>`
+      `<div class="card-container">
+        <div class="column">
+          <div class="card" onclick="openTab('b1');">
+            <li><h3>${responseJson[i].mission_name}</h3>
+            <p>Rocket: ${responseJson[i].rocket.rocket_name}</p>
+            <p>${responseJson[i].launch_year}</p>
+            <img alt="mission patches" class="patch-resize" src='${responseJson[i].links.mission_patch_small}'>
+            </li>
+          </div>
+        </div>
+       </div>
+      <div id="b1" class="containerTab" style="display:none">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+        <h2>Mission Name: <a href='${responseJson[i].links.article_link}'>${responseJson[i].mission_name}</a></h2>
+        <p>Launch Site: ${responseJson[i].launch_site.site_name_long}</p>
+        <p>Mission Details: ${responseJson[i].details}</p>
+        </div>`
     )};
   };
   $('#results').removeClass('hidden');
-  $( "#submit-button" ).click(function() {
-  $( "#no-result-message" ).empty();
+  $('#submit-button').click(function() {
+    $('#no-result-message').empty();
+    
 });
+}
+
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
 }
 
 
@@ -136,7 +159,7 @@ function getLaunches(query) {
     q: query,
   };
   const searchTerm = $('#js-search-term').val();
-  const url = searchURL + 'launches/' ;
+  const url = searchURL + 'launches/?launch_year=' + query + "&" ;
   console.log(url);
 
   fetch(url)
@@ -147,9 +170,13 @@ function getLaunches(query) {
       throw new Error(response.statusText);
     })
     .then(responseJson => {
-      if(responseJson.launch_year !== $('#js-search-term').val()) {
+      if(responseJson.launch_year != $('#js-search-term').val()) {
+
+      if(responseJson.length === 0){
      $('#no-result-message').text(`Sorry! Looks like there weren't any launches found that year`);
-      } 
+      } else { $('#no-result-message').text(``);
+      }
+      };
       console.log(responseJson);
       displayResults(responseJson);
       
@@ -157,6 +184,7 @@ function getLaunches(query) {
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
+
 }
 
 
