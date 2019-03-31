@@ -28,7 +28,7 @@ header {
 
 main {
   position:absolute;
-  top: 250px;
+  top: 150px;
   left:0px;
   right:0px;
   bottom:0px;
@@ -382,23 +382,30 @@ ul, li {
     overflow: scroll;
     position: relative;
     -webkit-animation-name: timeline; 
-    -webkit-animation-duration: 120s; 
+    -webkit-animation-duration: 10s; 
     -webkit-animation-delay: 2s; 
     animation-name: timeline;
-    animation-duration: 120s;
+    animation-duration: 10s;
     animation-delay: 2s;
+  }
+
+  #timeline-container:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+     animation-play-state: paused;
+     overflow-y: scroll;
+
   }
   
   @-webkit-keyframes timeline{
     0%   {top:0px;}
-    50% {top:-4400px;}
-    100% {top:0px;}
+    100% {top:-4600px;}
   }
   
   @keyframes timeline{
     0%   {top:0px;}
-    50% {top:-4400px;}
-    100% {top:0px;}
+    100% {top:-4400px;}
   }
 
 
@@ -565,6 +572,11 @@ animation:move-twink-back 200s linear infinite;
 }
 
 @media screen and (max-width: 600px) {
+
+  main {
+    top: 250px;
+  }
+
   nav { 
     display: flex;
     flex-flow: row wrap;

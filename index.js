@@ -234,7 +234,6 @@ var outDisplay = `<div class="card-container">
 
 
     outDisplay = outDisplay + `
-
             </li>
            </div> 
         </div>`;
