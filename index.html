@@ -6,40 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SpaceX Launches and Vehichles</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
-<body>
-  <header>
-    <img src="images/Xlogo.png" alt="spacex logo" class="spacexlogo">
-  </header>
-  <div class="container">
-    <h1>Search SpaceX Launches</h1>
-      <form id="js-form">
-        <label for="search-term">SpaceX has held launches since 2006.  What year would you like to search?</label>
-        <input type="number" name="search-term" id="js-search-term" required>
-        <input type="submit" id="submit-button" value="Go!">
-       </form>
-    <div class="dropdown">
-      <button onclick="dropDownMenu()" class="dropbtn">Learn More About...</button>
-      <div id="js-dropdown" class="dropdown-content">
-      <a onclick="displayRockets()">Rockets</option>
-      <a onclick="displayCapsules()">Capsules</a>
-      <a onclick="displayDroneShips()">Drone Ships</a>
-    </div>
-  </div> 
-  <div id="spacex_link">
-    <a href="https://www.spacex.com/" target="blank"><input id="spacex-link-button" type="button" value="Visit SpaceX"></a>
-  </div>
 
-  <p id="js-error-message" class="error-message"></p>
-    <section id="results" class="hidden">
-    
-    <ul id="results-list">
-    </ul>
+<body> 
+    <section id="bg-animation" role="animation container">
+        <div role="background animation" class="stars"></div>
+        <div role="background animation" class="twinkling"></div>
+      </section>
+
+    <header role="banner">
+      <img src="images/Xlogo.png" alt="spacex logo" class="spacexlogo" id="one">
+      <h1 class="center"><a href="index.html">Search SpaceX Launches</a></h1>
+       <nav role="nav" class="form-container">
+          <form id="js-form" role="form" >
+              <label for="search-term">What year would you like to search?</label>
+              <input type="number" name="search-term" id="js-search-term" min="2006" required>
+              <input type="submit" id="submit-button" value="Go!">
+            </form>
+            <div class="dropdown">
+                <button onclick="dropDownMenu()" class="dropbtn">More...</button>
+                <div id="js-dropdown" class="dropdown-content">
+                <a onclick="displayRockets()">Vehichles</option>
+                <a onclick="displayTimeline()">Timeline</a>
+                <a onclick="getPhotos()">Gallery</a>
+                <a href="https://www.spacex.com/" target="blank">Visit SpaceX</a>
+                </div>
+        </nav>
+      </header>   
+  <main>
+    <section role="inner html"><p id="dropHTML"></p></section>
+    <section id="results" class="hidden" role="results">
+      <ul id="results-list">
+      </ul>
     </section>
-    <p id="no-result-message"></p>
-  <p id="dropHTML"></p>
+    <section role="error-messages">
+      <p id="js-error-message" class="error-message"></p>
+      <p id="no-result-message"></p>
+    </section>
+  </main>
   <script src="index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </body>
 </html>
