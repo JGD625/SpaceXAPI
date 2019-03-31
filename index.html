@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SpaceX Launches and Vehichles</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-</head>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
 
 <body> 
     <section id="bg-animation" role="animation container">
@@ -20,32 +22,41 @@
     <header role="banner">
       <img src="images/Xlogo.png" alt="spacex logo" class="spacexlogo" id="one">
       <h1 class="center"><a href="index.html">Search SpaceX Launches</a></h1>
-       <nav role="nav" class="form-container">
+        <nav role="nav" class="form-container">
           <form id="js-form" role="form" >
-              <label for="search-term">What year would you like to search?</label>
-              <input type="number" name="search-term" id="js-search-term" min="2006" required>
+            <div class="full-input">
+              <label for="search-term" class="input">What year shall we search?</label>
+              <input type="number" name="search-term" id="js-search-term" min="2006" value="">
+            </div>
+            <div>
               <input type="submit" id="submit-button" value="Go!">
-            </form>
-            <div class="dropdown">
-                <button onclick="dropDownMenu()" class="dropbtn">More...</button>
+            </div>
+          </form>
+          <div class="dropdown">
+              <button onclick="dropDownMenu()" class="dropbtn">More...</button>
                 <div id="js-dropdown" class="dropdown-content">
-                <a onclick="displayRockets()">Vehichles</option>
-                <a onclick="displayTimeline()">Timeline</a>
-                <a onclick="getPhotos()">Gallery</a>
-                <a href="https://www.spacex.com/" target="blank">Visit SpaceX</a>
+                  <a onclick="displayRockets()">Vehichles</option>
+                  <a onclick="displayTimeline()">Timeline</a>
+                  <a onclick="getPhotos()">Gallery</a>
+                  <a href="https://www.spacex.com/" target="blank">Visit SpaceX</a>
                 </div>
+            </div> 
         </nav>
-      </header>   
+      </header>  
+
   <main>
-    <section role="inner html"><p id="dropHTML"></p></section>
     <section id="results" class="hidden" role="results">
       <ul id="results-list">
       </ul>
     </section>
+    <section role="inner html"><p id="dropHTML"></p></section>
     <section role="error-messages">
       <p id="js-error-message" class="error-message"></p>
       <p id="no-result-message"></p>
     </section>
+    <div class="fadeout">
+        <span class="white bigger"> I'd like to die on</span><span class="yellow bigger"> Mars,</span><br><span class="white bigger"> just <span class="yellow bigger">not</span> <span class="white bigger"> on impact. </span><span class="white bigger"></br>-Elon Musk</span>
+     </div>
   </main>
   <script src="index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

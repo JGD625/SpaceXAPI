@@ -2,6 +2,10 @@
  
 const searchURL = 'https://api.spacexdata.com/v3/';
 
+
+
+
+
 //Gallery of Flickr Images
 
 function displayGallery(responseJson){
@@ -20,7 +24,7 @@ function displayGallery(responseJson){
             <img id="flickrimg" 
             alt="mission images" class="gallery-resize" src='${responseJson[i].links.flickr_images[Math.floor(Math.random()*responseJson[i].links.flickr_images.length)]}'>
            </a>`
-  } if ( i == 25 ) {break;}
+  } if ( i == 24 ) {break;}
         $('#results-list').append(outDisplay);
   };
   
@@ -163,38 +167,38 @@ function displayRockets(responseJson) {
   $( "#no-result-message" ).empty();
   $("#dropHTML").empty();
   document.getElementById("dropHTML").innerHTML =
-      `<div class="rocket-container"><h3><a href='https://en.wikipedia.org/wiki/Falcon_9'>FALCON 9</a></h3>
-      <div class="left"><img src="images/falcon9-render1.png" alt="falcon 9" class="resize-image"></div>
-      <div class="procket"><p>  Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit. </p><p>  Falcon 9 is the first orbital class rocket capable of reflight. Falcon 9, along with the Dragon spacecraft, was designed from the outset to deliver humans into space and under an agreement with NASA, SpaceX is actively working toward this goal.</p></div>
-      </div>
+      `<section class="vehicles">
       <div class="rocket-container">
-      <H3><a href='https://en.wikipedia.org/wiki/Falcon_Heavy'>FALCON HEAVY</a></H3>
-      <div class="left"><img src="images/falcon-heavy1.png" alt="falcon-heavy" class="resize-image"></div>
-      <div class="procket"><p>  Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons. </p><p>  Its first stage is composed of three Falcon 9 nine-engine cores whose 27 Merlin engines together generate more than 5 million pounds of thrust at liftoff, equal to approximately eighteen 747 aircraft. Only the Saturn V moon rocket, last flown in 1973, delivered more payload to orbit. </p></div>
-      </div><div id="capsule-container"><h3><a href='https://en.wikipedia.org/wiki/SpaceX_Dragon'>DRAGON</a></h3>  
-  <div class="left"><img src="images/capsule1.png" class="resize-image"></div>
-  <div class="procket"><p>The Dragon spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. The pressurized section of the capsule is designed to carry both people and environmentally sensitive cargo. Towards the base of the capsule and contained within the nose cone are the Draco thrusters, which allow for orbital maneuvering.</p><p>The Dragon spacecraft successfully docked with the space station ahead of schedule at 6:02 a.m. ET on March 3, 2019, becoming the first American spacecraft in history to autonomously dock with the International Space Station.</p></div></div>
-    <div id="ASDS-container><h3><a href='https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship'>ASDS:Autonomous Spaceport Drone Ships</a></h3>
-     <div class="left"><img src="images/ofcourse.png" alt="of course i still love you badge" class="resize-image"></div>
-      <div class="procket"><p>ASDS, or Autonomous Spaceport Drone Ships, are unique vessels that SpaceX uses to collect reusable rockets.
-     <p>Of Course I Still Love You operates in the Atlantic for launches form Cape Canaveral.</p>
-      <p>Just Read the Instructions operates in the Pacific for launches from Vandenberg in California.</p>
-      <p>A third ship, A Shortfall of Gravitas, is currently under construction. </p></div></div>`;
+        <div class="procket p-container">
+        <img src="images/2000px-Falcon9_rocket_family.svg.png" class="resize-imageB center">
+        <h2><a class="black" href='https://en.wikipedia.org/wiki/Falcon_9'>FALCON 9</a></h2>
+        <p>  Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit. </p><p>  Falcon 9 is the first orbital class rocket capable of reflight. Falcon 9, along with the Dragon spacecraft, was designed from the outset to deliver humans into space and under an agreement with NASA, SpaceX is actively working toward this goal.</p>
+        <h2><a class="black" href='https://en.wikipedia.org/wiki/Falcon_Heavy'>FALCON HEAVY</a></h2>
+        <p>  Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons. </p><p>  Its first stage is composed of three Falcon 9 nine-engine cores whose 27 Merlin engines together generate more than 5 million pounds of thrust at liftoff, equal to approximately eighteen 747 aircraft. Only the Saturn V moon rocket, last flown in 1973, delivered more payload to orbit. </p>
+        </div>
+      </div>
+      <div id="capsule-container" class="rocket-container">
+        <div class="procket p-container">
+        <img src="images/Crew_Dragon_Drawing.png" class="resize-imageB center">
+        <h2><a class="black" href='https://en.wikipedia.org/wiki/SpaceX_Dragon'>DRAGON</a></h2>  
+        <p>The Dragon spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. The pressurized section of the capsule is designed to carry both people and environmentally sensitive cargo. Towards the base of the capsule and contained within the nose cone are the Draco thrusters, which allow for orbital maneuvering.</p><p>The Dragon spacecraft successfully docked with the space station ahead of schedule at 6:02 a.m. ET on March 3, 2019, becoming the first American spacecraft in history to autonomously dock with the International Space Station.</p>
+        </div>
+      </div>
+      <div id="ASDS-container" class="rocket-container">
+        <div class="procket p-container">
+        <img src="images/ofcourse.png" alt="of course i still love you badge" class="resize-imageB center">
+        <h2><a class="black" href='https://en.wikipedia.org/wiki/Autonomous_spaceport_drone_ship'>ASDS:Autonomous Spaceport Drone Ships</a></h2>
+        <p>ASDS, or Autonomous Spaceport Drone Ships, are unique vessels that SpaceX uses to collect reusable rockets.
+        <p>Of Course I Still Love You operates in the Atlantic for launches form Cape Canaveral.</p>
+        <p>Just Read the Instructions operates in the Pacific for launches from Vandenberg in California.</p>
+        <p>A third ship, A Shortfall of Gravitas, is currently under construction. </p>
+        </div>
+      </div>
+      </section>`;
 }
 
-function displaySearch(responseJson) {
-  console.log(responseJson);
-  document.getElementById("js-form").reset();
-  $('#results-list').empty();
-  $( "#no-result-message" ).empty();
-  $("#dropHTML").empty();
-  document.getElementById("dropHTML").innerHTML =`<div class="bg-img"><form id="js-form" role="form" class="form-container">
-  <label for="search-term">What year would you like to search?</label>
-  <input type="number" name="search-term" id="js-search-term" min="2006" required>
-  <input type="submit" id="submit-button" value="Go!">
-</form></div>`;
 
-}
+
 
 //RESULTS OF LAUNCH SEARCH
 
@@ -259,6 +263,12 @@ function getLaunches(query) {
   const searchTerm = $('#js-search-term').val();
   const url = searchURL + 'launches/?launch_year=' + query + "&" ;
   console.log(url);
+  if ($('#js-search-term').val() == "") {
+    
+    swal("You must select a year to search.");
+    return false;
+  
+  } else {
 
   fetch(url)
     .then(response => {
@@ -282,7 +292,7 @@ function getLaunches(query) {
     .catch(err => {
       $('#js-error-message').text(`Something went wrong: ${err.message}`);
     });
-
+  }
 }
 
 function getPhotos(query) {
